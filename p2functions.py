@@ -9,14 +9,13 @@ def welcomeMessage () :
     print (f"This game will gather information about a home team and how many games they played. Then it will randomly generate scores for each game and give you the win/loss ratio. ")
     return name
 
-def menu(player)
-    #print out player options, and return which choice they made
+def menu(player, home = None)
+    #print out players options, and return which choice they made
     return choice
 
 def pickTeam(home = None)
     #Have user pick a team from list, if you have already picked home team, exclude from options to pick
     return team_name
-
 
 def scores():
     #function to calculate scores, and make sure that there isn't a tie
@@ -43,14 +42,17 @@ for run = TRUE:
     #Based on what they pick, either pick home team, pick opponent, print out team scores or quit
     if choice = #pickhometeam
         home = pickTeam()
+        games = {}
     elif choice = #playgame
         away = pickTeam(home)
         score = scores()
         games[opponent]=score
     elif choice = #printScores
+        seasonOutCome[homeTeam] = games
         outputScores(seasonOutCome)
     else choice
         run = False
+    
 
 
 
@@ -67,6 +69,9 @@ for game in range(gameCnt):
 
 #Input team scores into the dictionary
 seasonOutCome[homeTeam] = games
+
+
+#Everything below here is what I would put in the output scores function
 wins = 0
 totalGames = 0
 print("\n")

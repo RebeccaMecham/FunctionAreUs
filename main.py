@@ -84,16 +84,19 @@ def scores(inpGames) :
             losses += 1
     return [wins, losses]
 
-# neatly prints out the scores and outcomes for each game simulated by scores()
-def outputScores(homeTeam, inpGames, wL) :
-    wins, losses = wL
-    # Displaying results
-    print(f"\nBIG 12 Conference standing for {homeTeam} women's soccer:")
+# prints out scores collected 
+def outputScores(homeTeam, inpGames, winloss) :
+    wins, losses = winloss
+    # print hometeam and results
+    print(f"\n{homeTeam}'s conference standing for BIG 12 women's soccer:")
+
     for team, games in dictTeams.items():
         print(f"\tOpponent: {team}")
+
         for game in games:
             homeScore, awayScore = game
             result = "Win" if homeScore > awayScore else "Loss"
+            # print scores and result
             print(f"\t\t{homeTeam} Score: {homeScore}, Opponent Score: {awayScore}, Result: {result}")
 
     # Displaying final season record

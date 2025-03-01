@@ -24,8 +24,8 @@ def menu(player):
     if (choice.isdigit() and 0 < int(choice) < 3):
         return int(choice)
     else:
-        print("\nInvalid choice. Please choose from menu options. \nMenu: \n1. Simulate BIG 12 Women's Soccer Conference \n2. Quit")
-        choice = input("Enter your choice (1 or 2): ")
+        print("\nInvalid choice. Please choose from menu options.")
+        menu(player)
     return choice
 
 # prints list of teams for user to select from

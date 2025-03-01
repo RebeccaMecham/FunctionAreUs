@@ -1,4 +1,4 @@
-#Rebecca Mecham, code from class assignment
+#Rebecca Mecham, Blake Rogers code from class assignment
 #Collect a Dictionary of how the Season went for your team
 import random
 
@@ -9,8 +9,16 @@ def welcomeMessage () :
     print (f"This game will gather information about a home team and how many games they played. Then it will randomly generate scores for each game and give you the win/loss ratio. ")
     return name
 
-def menu(player, home = None)
-    #print out players options, and return which choice they made
+#print out players options, and return which choice they made
+
+def menu(player, home = None):
+    print(f"\n{player}, choose an option:")
+    print("1. Pick Home Team")
+    print("2. Pick Opponent")
+    print("3. Print Scores")
+    print("4. Quit")
+
+    choice = int(input("Enter your choice: "))
     return choice
 
 def pickTeam(home = None)
@@ -37,22 +45,23 @@ seasonOutCome = {}
 
 name = welcomeMessage()
 run = TRUE
-for run = TRUE:
+while run:
     choice = menu(name)
     #Based on what they pick, either pick home team, pick opponent, print out team scores or quit
-    if choice = #pickhometeam
+    if choice = 1 #pickhometeam
         home = pickTeam()
         games = {}
-    elif choice = #playgame
+    elif choice = 2 #playgame
         away = pickTeam(home)
         score = scores()
         games[opponent]=score
-    elif choice = #printScores
+    elif choice = 3 #printScores
         seasonOutCome[homeTeam] = games
         outputScores(seasonOutCome)
-    else choice
+    elif choice = 4 #quit
         run = False
-    
+    else:
+        print("Invalid choice. Please choose a number between 1 and 4.")
 
 
 

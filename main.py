@@ -24,9 +24,8 @@ def menu(player):
     if (choice.isdigit() and 0 < int(choice) < 3):
         return int(choice)
     else:
-        print("\nInvalid choice. Please choose from menu options. \nMenu: \n1. Simulate BIG 12 Women's Soccer Conference \n2. Quit")
-        choice = input("Enter your choice (1 or 2): ")
-    return choice
+        print("\nInvalid choice. Please choose from menu options.")
+        return menu(player)
 
 # prints list of teams for user to select from
 def printTeams():
@@ -41,7 +40,7 @@ def get_team():
         return int(i)
     else:
         print("\nInvalid choice. Please choose a team number listed above.")
-        get_team()
+        return get_team()
 
 # returns the corresponding team from the team list that matches the user input
 def pickTeam(gameNum = 0, home = True):
@@ -90,6 +89,7 @@ def outputScores(homeTeam, inpGames, winloss) :
     # print hometeam and results
     print(f"\n{homeTeam}'s conference standing for BIG 12 women's soccer:")
     
+
     for team, games in dictTeams.items():
         print(f"\tOpponent: {team}")
 
